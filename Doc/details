@@ -43,3 +43,13 @@ An expert should be able to filter the students by category
 The IPT manager can remove invalid members; students or experts.
 
 -----------------------------------------------------------------------------------
+
+/////////////////////////////////////
+registation atr
+
+*user_name
+*user_email
+*user_pwd
+*user_type
+*acc_status
+/////////////////////////////////////
