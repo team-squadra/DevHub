@@ -108,3 +108,20 @@
 
 
 </html>
+
+
+<?php
+session_start();
+
+if (!isset($_SESSION['user_type'])) {
+    header('Location: Access/login.php');
+} else if ($_SESSION['user_type'] == 'student') {
+    header('Location: Student/index.php');
+} else if ($_SESSION['user_type'] == 'expert') {
+    header('Location: Expert/index.php');
+} else if ($_SESSION['user_type'] == 'iptmanager') {
+    header('Location: Iptmanager/index.php');
+} else {
+}
+
+?>
