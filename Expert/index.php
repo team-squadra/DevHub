@@ -31,38 +31,49 @@ if (!isset($_SESSION['user_type'])) {
     <meta name="twitter:url" content="" />
     <meta name="twitter:card" content="" />
 
-	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="../images/logo/logo.png" />
-	<!--===============================================================================================-->
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" href="favicon.ico">
-
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="../images/logo/logo.png" />
+    <!--===============================================================================================-->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <!--===============================================================================================-->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-
+    <!--===============================================================================================-->
     <!-- Animate.css -->
     <link rel="stylesheet" href="css/animate.css">
+    <!--===============================================================================================-->
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="css/icomoon.css">
+    <!--===============================================================================================-->
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="css/bootstrap.css">
+    <!--===============================================================================================-->
     <!-- Flexslider  -->
     <link rel="stylesheet" href="css/flexslider.css">
+    <!--===============================================================================================-->
     <!-- Flaticons  -->
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <!--===============================================================================================-->
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!--===============================================================================================-->
     <!-- Theme style  -->
     <link rel="stylesheet" href="css/style.css">
-
+    <!--===============================================================================================-->
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
+    <!--===============================================================================================-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
+    <!--===============================================================================================-->
+    
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <!--===============================================================================================-->
 </head>
 
 <body>
@@ -72,14 +83,20 @@ if (!isset($_SESSION['user_type'])) {
                 aria-expanded="false" aria-controls="navbar"><i></i></a>
             <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
                 <div class="text-center">
-                    <div class="author-img" style="background-image: url(images/about.jpg);"></div>
-                    <h1 id="colorlib-logo"><a href="index.html"><?php echo $_SESSION["user_name"]?></a></h1>
-                    <label><?php echo $_SESSION["user_email"]?></label><br>
-                    <label><?php echo $_SESSION["user_nic"]?></label><br>
-                    <label><?php echo $_SESSION["user_type"]?></label><br>
-                    <label><?php echo $_SESSION["acc_status"]?></label><br>
-                    <label><a href="../Access/logout.php">Log out</a></label>
+                    <div class="author-img"
+                        style="background-image: url(../images/logo/logo_gray.png);width:100px;height:100px;"></div>
+                    <h1 id="colorlib-logo">
+                        <a href="index.php">
+                            <label class="unameview">
+                                <?php echo $_SESSION["user_name"]?>
+                            </label>
+                            <label class="uemailview">
+                                <?php echo $_SESSION["user_email"]?>
+                            </label>
+                        </a>
+                    </h1>
                 </div>
+                <hr>
                 <nav id="colorlib-main-menu" role="navigation" class="navbar">
                     <div id="navbar" class="collapse">
                         <ul>
@@ -95,8 +112,12 @@ if (!isset($_SESSION['user_type'])) {
                         </ul>
                     </div>
                 </nav>
+                <hr>
+                <div class="text-center">
+                    <label class="btn"><a href="../Access/logout.php">Log out</a></label>
+                </div>
 
-                <div class="colorlib-footer">
+                <div class="colorlib-footer dnone">
                     <p><small>&copy;
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;<script>
