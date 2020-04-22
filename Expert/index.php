@@ -77,6 +77,10 @@ if (!isset($_SESSION['user_type'])) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
     <!--===============================================================================================-->
+
+    <!-- button -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -86,19 +90,43 @@ if (!isset($_SESSION['user_type'])) {
                 aria-expanded="false" aria-controls="navbar"><i></i></a>
             <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
                 <div class="text-center">
-                    <div class="author-img"
-                        style="background-image: url(../images/logo/logo_gray.png);width:100px;height:100px;">
-                    </div>
-                    <h1 id="colorlib-logo">
-                        <a href="index.php">
-                            <label class="unameview">
-                                <?php echo $_SESSION["user_name"]?>
-                            </label><br>
-                            <label class="uemailview">
-                                <?php echo $_SESSION["user_email"]?>
-                            </label>
-                        </a>
-                    </h1>
+                    <?php 
+                        include 'Controllers/get_expert_details.php';
+
+                        foreach($responseData AS $response) {
+
+                            $profile_pic = $response['profile_pic'];
+                            $profession = $response['profession'];
+                            $company = $response['company'];
+                            $name = $_SESSION["user_name"];
+                            
+                            if($profile_pic == ""){
+                                echo'
+                                <div class="author-img"
+                                    style="background-image: url(../images/logo/logo_gray.png);width:100px;height:100px;">
+                                </div>
+                                ';
+                            }
+                            else{
+                                echo'
+                                <div class="author-img"
+                                    style="background-image: url(data:image/png;base64,' . $profile_pic . ');width:100px;height:100px;">
+                                </div>
+                                <h1 id="colorlib-logo">
+                                    <a href="index.php">
+                                        <label class="unameview">
+                                            '.$name.'
+                                        </label><br>
+                                        <label class="uemailview">
+                                            '.$profession.' in '.$company.'
+                                        </label>
+                                    </a>
+                                </h1>
+                                ';
+                            }
+                        }
+                    ?>
+
                 </div>
                 <hr>
                 <nav id="colorlib-main-menu" role="navigation" class="navbar">
@@ -106,7 +134,7 @@ if (!isset($_SESSION['user_type'])) {
                         <ul>
                             <li class="active"><a href="#" data-nav-section="home">Home</a></li>
                             <li><a href="#" data-nav-section="about">About</a></li>
-                            <li><a href="#" data-nav-section="services">Services</a></li>
+                            <li><a href="#" data-nav-section="services">Student list</a></li>
                             <li><a href="#" data-nav-section="contact">Contact</a></li>
                         </ul>
                     </div>
@@ -122,7 +150,7 @@ if (!isset($_SESSION['user_type'])) {
                 <section id="colorlib-hero" class="js-fullheight" data-section="home">
                     <div class="flexslider js-fullheight">
                         <ul class="slides">
-                            <li style="background-image: url(images/img_bg_1.jpg);">
+                            <li style="background-image: url(images/istockphoto.jpg">
                                 <div class="overlay"></div>
                                 <div class="container-fluid">
                                     <div class="row">
@@ -130,12 +158,14 @@ if (!isset($_SESSION['user_type'])) {
                                             class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
                                             <div class="slider-text-inner js-fullheight">
                                                 <div class="desc">
-                                                    <h1>Hi! <br>I'm Jackson</h1>
-                                                    <h2>100% html5 bootstrap templates Made by <a
-                                                            href="https://colorlib.com/"
-                                                            target="_blank">colorlib.com</a></h2>
-                                                    <p><a class="btn btn-primary btn-learn">Download CV <i
-                                                                class="icon-download4"></i></a></p>
+                                                    <h1>Recruit! <br>New trainee</h1>
+                                                    <h2>
+                                                        100% html5 bootstrap templates Made by 
+                                                        <a href="https://colorlib.com/" target="_blank">colorlib.com</a>
+                                                    </h2>
+                                                    <p>
+                                                        <a class="btn btn-primary btn-learn">Download CV <i class="icon-download4"></i></a>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -154,7 +184,10 @@ if (!isset($_SESSION['user_type'])) {
                                     <div class="col-md-12">
                                         <div class="about-desc">
                                             <span class="heading-meta">About Us</span>
-                                            <h2 class="colorlib-heading">Who Am I?</h2>
+                                            <h2 class="colorlib-heading">
+                                                Who Am I?
+                                                <button type="button" class="button1" data-toggle="modal" data-target="#myModal">Edit Profile</button> 
+                                            </h2>
                                             <?php 
                                             include 'Controllers/get_expert_details.php';
 
@@ -194,14 +227,38 @@ if (!isset($_SESSION['user_type'])) {
                         <div class="row row-pt-md">
                             <?php 
                                 include 'Controllers/get_students.php';
+                                include 'Controllers/indexfunctions.php';
 
                                 foreach($responseData AS $response) {
 
                                     $name = $response['name'];
                                     $description = $response['description'];
                                     $profile_pic = $response['profile_pic'];
-                                    if($profile_pic == ""){
-                                        echo'No image records';
+
+                                    $set_description = setdescription($description);
+                                    $word_count= countwords($description);
+
+                                    if($description == ""){
+                                        echo'
+                                            <div class="col-md-4 text-center animate-box">
+                                                <div class="services color-1">
+                                                    <span class="icon">
+                                                        <div class="author-img-services"
+                                                            style="background-image: url(data:image/png;base64,' . $profile_pic . ');width:100px;height:100px;">
+                                                        </div>
+                                                    </span>
+                                                    <div class="desc">
+                                                        <h3>'.$name.'</h3>
+                                                        <p> No description ...</p>
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <label class="btn">
+                                                            <a href="#">View</a>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ';
                                     }
                                     else{
                                         echo'
@@ -214,7 +271,12 @@ if (!isset($_SESSION['user_type'])) {
                                                     </span>
                                                     <div class="desc">
                                                         <h3>'.$name.'</h3>
-                                                        <p>'.$description.'</p>
+                                                        <p>'.$set_description.' ...</p>
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <label class="btn">
+                                                            <a href="#">View</a>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -244,7 +306,7 @@ if (!isset($_SESSION['user_type'])) {
                                     $email = $response['email'];
                                     $company = $response['company'];
                                     
-                                    if($email == ""){
+                                    if($company == ""){
                                         echo'No Contact Details to show';
                                     }
                                     else{
@@ -294,6 +356,29 @@ if (!isset($_SESSION['user_type'])) {
             </div><!-- end:colorlib-main -->
         </div><!-- end:container-wrap -->
     </div><!-- end:colorlib-page -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        
+        </div>
+    </div>
 
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
