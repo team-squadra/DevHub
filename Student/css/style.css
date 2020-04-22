@@ -2008,7 +2008,7 @@
         display: none;
     }
     
-    .btn {
+    .btnlogout {
         font-family: "Quicksand", Arial, sans-serif;
         background-color: transparent;
         color: white;
@@ -2020,7 +2020,7 @@
         border-bottom-color: transparent;
     }
     
-    .btn:hover {
+    .btnlogout:hover {
         border: 1px solid gray;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
@@ -2118,4 +2118,19 @@
     
     .clride {
         background-color: DarkKhaki;
+    }
+    
+    .custom-file-upload {
+        background-color: #4cae4c;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        width: 100%;
+        color: white;
+    }
+    
+    .custom-file-upload:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
