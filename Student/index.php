@@ -84,14 +84,14 @@ if (!isset($_SESSION['user_type'])) {
             <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
                 <div class="text-center">
                     <div class="author-img"
-                        style="background-image: url(../images/logo/logo_gray.png);width:100px;height:100px;"></div>
+                        style="background-image: url(../images/logo/kv_pro.jpg);width:100px;height:100px;"></div>
                     <h1 id="colorlib-logo">
                         <a href="index.php">
                             <label class="unameview">
-                                <?php echo $_SESSION["user_name"]?>
+                                <?php echo $_SESSION["user_name"] ?>
                             </label>
                             <label class="uemailview">
-                                <?php echo $_SESSION["user_email"]?>
+                                <?php echo $_SESSION["user_email"] ?>
                             </label>
                         </a>
                     </h1>
@@ -135,52 +135,241 @@ if (!isset($_SESSION['user_type'])) {
                     </ul>
                 </div>
 
+
+
             </aside>
 
             <div id="colorlib-main">
                 <section id="colorlib-hero" class="js-fullheight" data-section="home">
                     <div class="flexslider js-fullheight">
                         <ul class="slides">
-                            <li style="background-image: url(images/img_bg_1.jpg);">
+                            <?php
+                            include 'Controller/php/php_loadAllStudent.php';
+
+                            foreach ($responseData as $response) {
+                                if ($response['name'] != $_SESSION['user_name']) {
+                                    echo '
+                                <li style="background-image: url(../images/bg_1.jpg);">
                                 <div class="overlay"></div>
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <div
-                                            class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+                                        <div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
                                             <div class="slider-text-inner js-fullheight">
-                                                <div class="desc">
-                                                    <h1>Hi! <br>I'm Jackson</h1>
-                                                    <h2>100% html5 bootstrap templates Made by <a
-                                                            href="https://colorlib.com/"
-                                                            target="_blank">colorlib.com</a></h2>
-                                                    <p><a class="btn btn-primary btn-learn">Download CV <i
-                                                                class="icon-download4"></i></a></p>
+                                                <div class="desc profilecard">
+                                                
+                                                <table>
+                                                    <tr>
+                                                        <td style="width:100%"><div class="profilecardimg" style="background-image: url(data:image/png;base64,' . $response['profile_pic'] . ');"></div></td>
+                                                    </tr>
+                                                    <tr style="width:100%">
+                                                        <td>
+                                                        <div>
+                                                            <div class="profilecarddetail">
+                                                                <h4 class="prouname">' . $response['name'] . '</h4>
+                                                                <h6 class="proudetail" style="color:gray;">' . $response['email'] . '</h6>
+                                                                <p class="proudetail">' . $response['description'] . '</p><br>
+                                                                ';
+                                                                
+                                                                $php = $response['php'];
+                                                                if($php != 0){
+                                                                    if(0 < $php &&  $php <= 25){
+                                                                        echo'<label class="prodetailtag clrweak">php</label>';
+                                                                    }
+                                                                    else if(25 < $php &&  $php <= 50){
+                                                                        echo'<label class="prodetailtag clrgood">php</label>';
+                                                                    }
+                                                                    else if(50 < $php &&  $php <= 75){
+                                                                        echo'<label class="prodetailtag clrstrong">php</label>';
+                                                                    }
+                                                                    else if(75 < $php &&  $php <= 100){
+                                                                        echo'<label class="prodetailtag clrexpert">php</label>';
+                                                                    }
+                                                                }
+
+                                                                $javascript = $response['javascript'];
+                                                                if($javascript != 0){
+                                                                    if(0 < $javascript &&  $javascript <= 25){
+                                                                        echo'<label class="prodetailtag clrweak">javascript</label>';
+                                                                    }
+                                                                    else if(25 < $javascript &&  $javascript <= 50){
+                                                                        echo'<label class="prodetailtag clrgood">javascript</label>';
+                                                                    }
+                                                                    else if(50 < $javascript &&  $javascript <= 75){
+                                                                        echo'<label class="prodetailtag clrstrong">javascript</label>';
+                                                                    }
+                                                                    else if(75 < $javascript &&  $javascript <= 100){
+                                                                        echo'<label class="prodetailtag clrexpert">javascript</label>';
+                                                                    }
+                                                                }
+
+                                                                $c_sharp = $response['c_sharp'];
+                                                                if($c_sharp != 0){
+                                                                    if(0 < $c_sharp &&  $c_sharp <= 25){
+                                                                        echo'<label class="prodetailtag clrweak">C#</label>';
+                                                                    }
+                                                                    else if(25 < $c_sharp &&  $c_sharp <= 50){
+                                                                        echo'<label class="prodetailtag clrgood">C#</label>';
+                                                                    }
+                                                                    else if(50 < $c_sharp &&  $c_sharp <= 75){
+                                                                        echo'<label class="prodetailtag clrstrong">C#</label>';
+                                                                    }
+                                                                    else if(75 < $c_sharp &&  $c_sharp <= 100){
+                                                                        echo'<label class="prodetailtag clrexpert">C#</label>';
+                                                                    }
+                                                                }
+
+                                                                $c_2plus = $response['c_2plus'];
+                                                                if($c_2plus != 0){
+                                                                    if(0 < $c_2plus &&  $c_2plus <= 25){
+                                                                        echo'<label class="prodetailtag clrweak">C++</label>';
+                                                                    }
+                                                                    else if(25 < $c_2plus &&  $c_2plus <= 50){
+                                                                        echo'<label class="prodetailtag clrgood">C++</label>';
+                                                                    }
+                                                                    else if(50 < $c_2plus &&  $c_2plus <= 75){
+                                                                        echo'<label class="prodetailtag clrstrong">C++</label>';
+                                                                    }
+                                                                    else if(75 < $c_2plus &&  $c_2plus <= 100){
+                                                                        echo'<label class="prodetailtag clrexpert">C++</label>';
+                                                                    }
+                                                                }
+
+                                                                $java = $response['java'];
+                                                                if($java != 0){
+                                                                    if(0 < $java &&  $java <= 25){
+                                                                        echo'<label class="prodetailtag clrweak">java</label>';
+                                                                    }
+                                                                    else if(25 < $java &&  $java <= 50){
+                                                                        echo'<label class="prodetailtag clrgood">java</label>';
+                                                                    }
+                                                                    else if(50 < $java &&  $java <= 75){
+                                                                        echo'<label class="prodetailtag clrstrong">java</label>';
+                                                                    }
+                                                                    else if(75 < $java &&  $java <= 100){
+                                                                        echo'<label class="prodetailtag clrexpert">java</label>';
+                                                                    }
+                                                                }
+
+                                                                $node_js = $response['node_js'];
+                                                                if($node_js != 0){
+                                                                    if(0 < $node_js &&  $node_js <= 25){
+                                                                        echo'<label class="prodetailtag clrweak">node js</label>';
+                                                                    }
+                                                                    else if(25 < $node_js &&  $node_js <= 50){
+                                                                        echo'<label class="prodetailtag clrgood">node js</label>';
+                                                                    }
+                                                                    else if(50 < $node_js &&  $node_js <= 75){
+                                                                        echo'<label class="prodetailtag clrstrong">node js</label>';
+                                                                    }
+                                                                    else if(75 < $node_js &&  $node_js <= 100){
+                                                                        echo'<label class="prodetailtag clrexpert">node js</label>';
+                                                                    }
+                                                                }
+
+                                                                $react_js = $response['react_js'];
+                                                                if($react_js != 0){
+                                                                    if(0 < $react_js &&  $react_js <= 25){
+                                                                        echo'<label class="prodetailtag clrweak">react js</label>';
+                                                                    }
+                                                                    else if(25 < $react_js &&  $react_js <= 50){
+                                                                        echo'<label class="prodetailtag clrgood">react js</label>';
+                                                                    }
+                                                                    else if(50 < $react_js &&  $react_js <= 75){
+                                                                        echo'<label class="prodetailtag clrstrong">react js</label>';
+                                                                    }
+                                                                    else if(75 < $react_js &&  $react_js <= 100){
+                                                                        echo'<label class="prodetailtag clrexpert">react js</label>';
+                                                                    }
+                                                                }
+
+                                                                $python = $response['python'];
+                                                                if($python != 0){
+                                                                    if(0 < $python &&  $python <= 25){
+                                                                        echo'<label class="prodetailtag clrweak">python</label>';
+                                                                    }
+                                                                    else if(25 < $python &&  $python <= 50){
+                                                                        echo'<label class="prodetailtag clrgood">python</label>';
+                                                                    }
+                                                                    else if(50 < $python &&  $python <= 75){
+                                                                        echo'<label class="prodetailtag clrstrong">python</label>';
+                                                                    }
+                                                                    else if(75 < $python &&  $python <= 100){
+                                                                        echo'<label class="prodetailtag clrexpert">python</label>';
+                                                                    }
+                                                                }
+
+                                                                echo '<hr>';
+
+                                                                $visual_studio = $response['visual_studio'];
+                                                                if($visual_studio != 0){
+                                                                    echo'<label class="prodetailtag clride">Visual studio</label>';
+                                                                }
+
+                                                                $eclipse = $response['eclipse'];
+                                                                if($eclipse != 0){
+                                                                    echo'<label class="prodetailtag clride">Eclipse</label>';
+                                                                }
+
+                                                                $netbeans = $response['netbeans'];
+                                                                if($netbeans != 0){
+                                                                    echo'<label class="prodetailtag clride">Netbeans</label>';
+                                                                }
+
+                                                                $atom = $response['atom'];
+                                                                if($atom != 0){
+                                                                    echo'<label class="prodetailtag clride">Atom</label>';
+                                                                }
+
+                                                                $vs_code = $response['vs_code'];
+                                                                if($vs_code != 0){
+                                                                    echo'<label class="prodetailtag clride">Vs code</label>';
+                                                                }
+
+                                                                $qt_creator = $response['qt_creator'];
+                                                                if($qt_creator != 0){
+                                                                    echo'<label class="prodetailtag clride">Qt creator</label>';
+                                                                }
+
+                                                                $pycharm = $response['pycharm'];
+                                                                if($pycharm != 0){
+                                                                    echo'<label class="prodetailtag clride">Pycharm</label>';
+                                                                }
+
+                                                                $intelliJ_idea = $response['intelliJ_idea'];
+                                                                if($intelliJ_idea != 0){
+                                                                    echo'<label class="prodetailtag clride">IntelliJ IDEA</label>';
+                                                                }
+
+                                                                $code_blocks = $response['code_blocks'];
+                                                                if($code_blocks != 0){
+                                                                    echo'<label class="prodetailtag clride">Code::Blocks</label>';
+                                                                }
+
+                                                                $rubymine = $response['rubymine'];
+                                                                if($rubymine != 0){
+                                                                    echo'<label class="prodetailtag clride">RubyMine</label>';
+                                                                }
+
+
+                                         
+                                    echo '
+                                                            </div>
+                                                        </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li style="background-image: url(images/img_bg_2.jpg);">
-                                <div class="overlay"></div>
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div
-                                            class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-                                            <div class="slider-text-inner">
-                                                <div class="desc">
-                                                    <h1>I am <br>a Designer</h1>
-                                                    <h2>100% html5 bootstrap templates Made by <a
-                                                            href="https://colorlib.com/"
-                                                            target="_blank">colorlib.com</a></h2>
-                                                    <p><a class="btn btn-primary btn-learn">View Portfolio <i
-                                                                class="icon-briefcase3"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                                ';
+                                } else {
+                                }
+                            }
+                            ?>
+
                         </ul>
                     </div>
                 </section>
