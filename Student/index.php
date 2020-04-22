@@ -121,7 +121,7 @@ foreach ($responseData as $response) {
                         <a href="index.php">
                             <label class="unameview">
                                 <?php echo $_SESSION["user_name"] ?>
-                            </label>
+                            </label><br>
                             <label class="uemailview">
                                 <?php echo $_SESSION["user_email"] ?>
                             </label>
@@ -401,7 +401,7 @@ foreach ($responseData as $response) {
                                                     </td>
                                                 </tr>
                                             </table>
-                                            <div class="row " id="pro_data_input">
+                                            <div class="row dnone" id="pro_data_input">
                                                 <div class="col-md-7">
                                                     <div class="row">
                                                         <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
@@ -427,6 +427,30 @@ foreach ($responseData as $response) {
                                                                         <option value="Other">Other</option>
                                                                     </select>
                                                                 </div>
+                                                                <div class="form-group">
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td><i class="fab fa-github proicon"></i></td>
+                                                                            <td><input type="text" class="form-control" placeholder="git" name="git" value="<?php echo $student_git; ?>"></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td><i class="fab fa-linkedin proicon"></i></td>
+                                                                            <td><input type="text" class="form-control" placeholder="linkedin" name="linkedin" value="<?php echo $student_linkedin; ?>"></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <table>
+                                                                        <tr>
+                                                                            <td><i class="fab fa-stack-overflow proicon"></i></td>
+                                                                            <td><input type="text" class="form-control" placeholder="stack_overflow" name="stack_overflow" value="<?php echo $student_stack_overflow; ?>"></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
                                                                 <div class="form-group dnone" title="Current profile pic">
                                                                     <input type="text" class="form-control" placeholder="Image" name="cimage" value="<?php echo $student_profile_pic; ?>">
                                                                 </div>
@@ -439,10 +463,7 @@ foreach ($responseData as $response) {
                                                                     </center>
                                                                 </label>
                                                                 </div>
-                                                                <div class="form-group" title="Git link">
-                                                                    <input type="text" class="form-control" placeholder="Git" name="address" value="<?php echo $student_address; ?>">
-                                                                </div>
-
+ 
                                                                 <div class="dnone">
                                                                     <input type="number" value="<?php echo $student_php; ?>" name="php">
                                                                     <input type="number" value="<?php echo $student_css; ?>" name="css">
