@@ -1,4 +1,21 @@
-$rubymine = $response['rubymine'];
-                                                                if($rubymine != 0){
-                                                                    echo'<label class="prodetailtag clrweak">RubyMine</label>';
-                                                                }
+$student_php = $_POST['php'];
+$student_css = $_POST['css'];
+$student_javascript = $_POST['javascript'];
+$student_c_sharp = $_POST['c_sharp'];
+$student_c_2plus = $_POST['c_2plus'];
+$student_java = $_POST['java'];
+$student_node_js = $_POST['node_js'];
+$student_react_js = $_POST['react_js'];
+$student_python = $_POST['python'];
+$student_ruby = $_POST['ruby'];
+
+$student_visual_studio = $_POST['visual_studio'];
+$student_eclipse = $_POST['eclipse'];
+$student_netbeans = $_POST['netbeans'];
+$student_atom = $_POST['atom'];
+$student_vs_code = $_POST['vs_code'];
+$student_qt_creator = $_POST['qt_creator'];
+$student_pycharm = $_POST['pycharm'];
+$student_intelliJ_idea = $_POST['intelliJ_idea'];
+$student_code_blocks = $_POST['code_blocks'];
+$student_rubymine = $_POST['rubymine'];
