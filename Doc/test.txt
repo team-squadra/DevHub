@@ -1,0 +1,4 @@
+$rubymine = $response['rubymine'];
+                                                                if($rubymine != 0){
+                                                                    echo'<label class="prodetailtag clrweak">RubyMine</label>';
+                                                                }
