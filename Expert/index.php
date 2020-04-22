@@ -30,7 +30,8 @@ if (!isset($_SESSION['user_type'])) {
     <meta name="twitter:image" content="" />
     <meta name="twitter:url" content="" />
     <meta name="twitter:card" content="" />
-
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="../images/logo/logo.png" />
     <!--===============================================================================================-->
@@ -38,6 +39,7 @@ if (!isset($_SESSION['user_type'])) {
     <!--===============================================================================================-->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
     <!--===============================================================================================-->
+
     <!-- Animate.css -->
     <link rel="stylesheet" href="css/animate.css">
     <!--===============================================================================================-->
@@ -81,6 +83,7 @@ if (!isset($_SESSION['user_type'])) {
     <!-- button -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -141,7 +144,7 @@ if (!isset($_SESSION['user_type'])) {
                 </nav>
                 <hr>
                 <div class="text-center">
-                    <label class="btn"><a href="../Access/logout.php">Log out</a></label>
+                    <label class="btnlogout btn"><a href="../Access/logout.php">Log out</a></label>
                 </div>
 
             </aside>
@@ -186,7 +189,7 @@ if (!isset($_SESSION['user_type'])) {
                                             <span class="heading-meta">About Us</span>
                                             <h2 class="colorlib-heading">
                                                 Who Am I?
-                                                <button type="button" class="button1" data-toggle="modal" data-target="#myModal">Edit Profile</button> 
+                                                <button type="button" class="btn btn-primary btn-send-message" data-toggle="modal" data-target="#myModal">Edit Profile</button> 
                                             </h2>
                                             <?php 
                                             include 'Controllers/get_expert_details.php';
@@ -365,15 +368,98 @@ if (!isset($_SESSION['user_type'])) {
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title">Update Profile</h4>
             </div>
 
             <div class="modal-body">
-                <p>Some text in the modal.</p>
-            </div>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="name">User Name</label>
+                            <input type="text" class="form-control" placeholder="name" id="name">
+                            </div>
+                        </div>
+                        <!--  col-md-6   -->
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <input type="text" class="form-control" placeholder="(male/female)" id="gender">
+                            </div>
+                        </div>
+                        <!--  col-md-6   -->
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="phone_number">Phone number</label>
+                            <input type="text" class="form-control" placeholder="Phone number" id="phone_number">
+                            </div>
+
+
+                        </div>
+                        <!--  col-md-6   -->
+
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="tel" class="form-control" id="dob" placeholder="dob">
+                            </div>
+                        </div>
+                    <!--  col-md-6   -->
+                    </div>
+                    <!--  row   -->
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                            <label for="description">Description</label>
+                            <input type="text" class="form-control" id="description" placeholder="description">
+                            </div>
+                        </div>
+                        <!--  col-md-6   -->
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="company">Company name</label>
+                            <input type="text" class="form-control" id="company" placeholder="company">
+                            </div>
+
+                        </div>
+                        <!--  col-md-6   -->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                            <label for="profession">Profession</label>
+                            <input type="text" class="form-control" id="profession" placeholder="profession">
+                            </div>
+                        </div>
+                        <!--  col-md-6   -->
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="company_id">Company id</label>
+                            <input type="text" class="form-control" id="company_id" placeholder="company_id">
+                            </div>
+
+                        </div>
+                        <!--  col-md-6   -->
+                    </div>
+                    <p>Custom file:</p>
+                    <div class="custom-file mb-3">
+                        <input type="file" class="custom-file-input" id="customFile" name="filename">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
         
