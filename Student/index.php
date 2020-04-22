@@ -121,7 +121,7 @@ foreach ($responseData as $response) {
                         <a href="index.php">
                             <label class="unameview">
                                 <?php echo $_SESSION["user_name"] ?>
-                            </label>
+                            </label><br>
                             <label class="uemailview">
                                 <?php echo $_SESSION["user_email"] ?>
                             </label>
