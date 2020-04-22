@@ -27,6 +27,9 @@
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+    <!--===============================================================================================-->
 </head>
 
 <body style="background-color: #666666;">
@@ -45,109 +48,50 @@
                         </center>
                     </span>
 
-                    <div id="nav_div">
-                        <center>
-                            <div onclick="reg_as_user()" class="cpointer button btn-clr">Register as a Customer</div>
-                            <br>
-                            <div onclick="reg_as_hotel()" class="cpointer button btn-clr">Register as a Hotel</div>
-                        </center>
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="text" name="u_reg_nic" id="u_reg_nic_id" onfocus="clr_err()">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">NIC</span>
                     </div>
 
-                    <div id="user_reg_div" style="display: none;">
-
-                        <div class="wrap-input100 validate-input">
-                            <input class="input100" type="text" name="u_reg_uname" id="u_reg_uname_id"
-                                onfocus="clr_err()">
-                            <span class="focus-input100"></span>
-                            <span class="label-input100">Username</span>
-                        </div>
-
-                        <div class="wrap-input100 validate-input">
-                            <input class="input100" type="number" name="u_reg_phone" id="u_reg_phone_id"
-                                onfocus="clr_err()">
-                            <span class="focus-input100"></span>
-                            <span class="label-input100">Phone number</span>
-                        </div>
-
-                        <div class="wrap-input100 validate-input">
-                            <input class="input100" type="text" name="u_reg_email" id="u_reg_email_id"
-                                onfocus="clr_err()">
-                            <span class="focus-input100"></span>
-                            <span class="label-input100">Email</span>
-                        </div>
-
-                        <div class="wrap-input100 validate-input">
-                            <input class="input100" type="password" name="u_reg_pass" id="u_reg_pass_id"
-                                onfocus="clr_err()">
-                            <span class="focus-input100"></span>
-                            <span class="label-input100">Password</span>
-                        </div>
-
-                        <div class="wrap-input100 validate-input">
-                            <input class="input100" type="password" name="u_reg_conpass" id="u_reg_conpass_id"
-                                onfocus="clr_err()">
-                            <span class="focus-input100"></span>
-                            <span class="label-input100">Confirm Password</span>
-                        </div>
-
-                        <div class="text-right cpointer">
-                            <a href="registration.php">Change user type</a>
-                        </div>
-
-                        <div class="text-right">
-                            <label id="u_register_err_lbl" class="err_lbl"></label>
-                        </div>
-
-                        <div class="container-login100-form-btn" style="margin-bottom: 20px;">
-                            <button type="button" id="u_register_submit" class="login100-form-btn"
-                                onclick="u_register_check()">Sign up</button>
-                        </div>
-
-
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="text" name="u_reg_uname" id="u_reg_uname_id" onfocus="clr_err()">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Username</span>
                     </div>
 
-                    <div id="hotel_reg_div" style="display: none;">
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="text" name="u_reg_email" id="u_reg_email_id" onfocus="clr_err()">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Email</span>
+                    </div>
 
-                        <div class="wrap-input100 validate-input">
-                            <input class="input100" type="text" name="h_reg_uname" id="h_reg_uname_id"
-                                onfocus="clr_err()">
-                            <span class="focus-input100"></span>
-                            <span class="label-input100">Hotel Username</span>
-                        </div>
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="password" name="u_reg_pass" id="u_reg_pass_id"
+                            onfocus="clr_err()">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Password</span>
+                    </div>
 
-                        <div class="wrap-input100 validate-input">
-                            <input class="input100" type="text" name="h_reg_email" id="h_reg_email_id"
-                                onfocus="clr_err()">
-                            <span class="focus-input100"></span>
-                            <span class="label-input100">Hotel Email</span>
-                        </div>
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="password" name="u_reg_conpass" id="u_reg_conpass_id"
+                            onfocus="clr_err()">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Confirm Password</span>
+                    </div>
 
-                        <div class="wrap-input100 validate-input">
-                            <input class="input100" type="password" name="h_reg_pass" id="h_reg_pass_id"
-                                onfocus="clr_err()">
-                            <span class="focus-input100"></span>
-                            <span class="label-input100">Password</span>
-                        </div>
+                    <div class="text-right">
+                        <label class="button btnsolid" id="u_reg_type_view" onclick="change_user_type()">Student</label>
+                        <input type="text" value="student" name="u_reg_type" id="u_reg_type_id" style="display: none;">
+                    </div>
 
-                        <div class="wrap-input100 validate-input">
-                            <input class="input100" type="password" name="h_reg_conpass" id="h_reg_conpass_id"
-                                onfocus="clr_err()">
-                            <span class="focus-input100"></span>
-                            <span class="label-input100">Confirm Password</span>
-                        </div>
+                    <div class="text-right">
+                        <label id="u_register_err_lbl" class="err_lbl"></label>
+                    </div>
 
-                        <div class="text-right cpointer">
-                            <a href="registration.php">Change user type</a>
-                        </div>
-
-                        <div class="text-right">
-                            <label id="h_register_err_lbl" class="err_lbl"></label>
-                        </div>
-
-                        <div class="container-login100-form-btn" style="margin-bottom: 20px;">
-                            <button type="button" id="h_register_submit" class="login100-form-btn"
-                                onclick="h_register_check()">Sign up</button>
-                        </div>
+                    <div class="container-login100-form-btn" style="margin-bottom: 20px;">
+                        <button type="button" id="u_register_submit" class="login100-form-btn"
+                            onclick="u_register_check()">Sign up as a Student</button>
                     </div>
 
                     <center>
@@ -205,6 +149,15 @@
                     $(this).removeClass('has-val');
                 }
             })
+        })
+
+        $('.input100').each(function() {
+
+            if ($(this).val().trim() != "") {
+                $(this).addClass('has-val');
+            } else {
+                $(this).removeClass('has-val');
+            }
         })
     })(jQuery);
     </script>

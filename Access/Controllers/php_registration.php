@@ -1,32 +1,33 @@
 <?php
 session_start();
 
-include '../../Connecter/connecterlink.php';
+include '../../Clink/connectorlink.php';
 $clinklocal = $clink;
 
 registration($clinklocal);
 
 function registration($clinklocal){
 
-    if (isset($_GET['registration_user']) && $_GET['registration_user'] == 'true'){
+    if (isset($_GET['registration']) && $_GET['registration'] == 'true'){
 
-        $uname = $_POST['u_reg_uname'];
-        $phone_number = $_POST['u_reg_phone'];
-        $email = $_POST['u_reg_email'];
-        $password = $_POST['u_reg_pass'];
+        $user_nic = $_POST['u_reg_nic'];
+        $user_name = $_POST['u_reg_uname'];
+        $user_pwd = $_POST['u_reg_pass'];
+        $user_email = $_POST['u_reg_email'];
+        $user_type = $_POST['u_reg_type'];
 
         
         // The data to send to the API
         $postData = array(
-            'name' => $uname,
-            'password' => $password,
-            'email' => $email,
-            'phone_number' => $phone_number,
-            'status' => "user"
+            'user_nic' => $user_nic,
+            'user_name' => $user_name,
+            'user_pwd' => $user_pwd,
+            'user_email' => $user_email,
+            'user_type' => $user_type
         );
 
         // Setup cURL
-        $ch = curl_init(''.$clinklocal.'api/user/register');
+        $ch = curl_init(''.$clinklocal.'user/register');
         curl_setopt_array($ch, array(
             CURLOPT_POST => TRUE,
             CURLOPT_RETURNTRANSFER => TRUE,
@@ -38,7 +39,7 @@ function registration($clinklocal){
 
         // Send the request
         $response = curl_exec($ch);
-
+ 
         // Check for errors
         if ($response === FALSE) {
             die(curl_error($ch));
@@ -49,82 +50,39 @@ function registration($clinklocal){
         $responseData = json_decode($response, TRUE);
 
         //error
-        $error = $responseData['error'];
+        $query_status = $responseData['query_status'];
         
         //result finalizing
-        if ($error == "success"){
-            echo json_encode(['error' => 'success', 'msg' => 'login.php']);
+        if ($query_status == "success"){
+            registration_setp2($user_nic , $user_name ,$user_email, $user_type , $clinklocal);
         }
         else{
-            echo json_encode(['error' => 'error', 'msg' => ''.$error.'']);
+            echo json_encode(['error' => 'error', 'msg' => ''.$query_status.'']);
         }
 
     }
 
-
-    if (isset($_GET['registration_hotel']) && $_GET['registration_hotel'] == 'true'){
-
-        $uname = $_POST['h_reg_uname'];
-        $email = $_POST['h_reg_email'];
-        $password = $_POST['h_reg_pass'];
-
-        
-        // The data to send to the API
-        $postData = array(
-            'name' => $uname,
-            'password' => $password,
-            'email' => $email,
-            'status' => "hotel"
-        );
-
-        // Setup cURL
-        $ch = curl_init(''.$clinklocal.'api/user/register');
-        curl_setopt_array($ch, array(
-            CURLOPT_POST => TRUE,
-            CURLOPT_RETURNTRANSFER => TRUE,
-            CURLOPT_HTTPHEADER => array(
-                'Content-Type: application/json'
-            ),
-            CURLOPT_POSTFIELDS => json_encode($postData)
-        ));
-
-        // Send the request
-        $response = curl_exec($ch);
-
-        // Check for errors
-        if ($response === FALSE) {
-            die(curl_error($ch));
-            echo 'Dead';
-        }
-
-        // Decode the response
-        $responseData = json_decode($response, TRUE);
-
-        //error
-        $error = $responseData['error'];
-        
-        //result finalizing
-        if ($error == "success"){
-            registration_setp2($email , $uname ,$clinklocal);
-        }
-        else{
-            echo json_encode(['error' => 'error', 'msg' => ''.$error.'']);
-        }
-
-    }
 }
 
 
-function registration_setp2($remail , $runame , $clinklocal){
+function registration_setp2($user_nic , $user_name ,$user_email, $user_type , $clinklocal){
+
 
         //The data to send to the API
         $postData = array(
-            'email' => $remail,
-            'name' => $runame
+            'name' => $user_name,
+            'email' => $user_email,
         );
     
+        if($user_type == "expert"){
+            $rstlink ="itexperts/regitexperts";
+        }
+        else{
+            $rstlink ="students/regstudent";
+        }
+        
         // Setup cURL
-        $ch = curl_init(''.$clinklocal.'api/hotels/reghotel');
+        $ch = curl_init(''.$clinklocal.''.$rstlink.'');
         curl_setopt_array($ch, array(
             CURLOPT_POST => TRUE,
             CURLOPT_RETURNTRANSFER => TRUE,
@@ -147,14 +105,14 @@ function registration_setp2($remail , $runame , $clinklocal){
         $responseData = json_decode($response, TRUE);
     
         // Print the date from the response
-        $error = $responseData['error'];
+        $query_status = $responseData['query_status'];
 
         //result finalizing
-        if ($error == "success"){
+        if ($query_status == "success"){
             echo json_encode(['error' => 'success', 'msg' => 'login.php']);
         }
         else{
-            echo json_encode(['error' => 'error', 'msg' => ''.$error.'']);
+            echo json_encode(['error' => 'error', 'msg' => ''.$query_status.'']);
         }
 
 }
