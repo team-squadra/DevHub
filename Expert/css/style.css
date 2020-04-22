@@ -561,6 +561,14 @@ body.offcanvas .colorlib-nav-toggle {
     position: relative;
 }
 
+.author-img-services {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 50%;
+}
+
 .colorlib-heading {
     font-size: 18px;
     margin-bottom: 4em;
@@ -822,7 +830,7 @@ body.offcanvas .colorlib-nav-toggle {
 }
 
 .services {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     padding: 1.5em;
     -webkit-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
     -moz-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
@@ -894,40 +902,14 @@ body.offcanvas .colorlib-nav-toggle {
 
 .services .icon {
     position: absolute;
-    top: -20px;
+    top: -40px;
     left: 0;
     right: 0;
     width: 100px;
     height: 50px;
     display: table;
     margin: 0 auto;
-    background: #2c98f0;
-}
-
-.services .icon:before,
-.services .icon:after {
-    position: absolute;
-    left: 0;
-    right: 0;
-    content: '';
-}
-
-.services .icon:before {
-    top: -30px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 50px 30px 50px;
-    border-color: transparent transparent #2c98f0 transparent;
-}
-
-.services .icon:after {
-    bottom: -30px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 30px 50px 0 50px;
-    border-color: #2c98f0 transparent transparent transparent;
+    
 }
 
 .services .icon i {
