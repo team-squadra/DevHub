@@ -56,19 +56,26 @@ $clinklocal = $clink;
             $_SESSION["user_nic"] = $user_nic;
             $_SESSION["user_type"] = $user_type;
             $_SESSION["acc_status"] = $acc_status;
-            
-            if ($user_type == "student") {
+
+            if($acc_status != "pending"){
+                if ($user_type == "student") {
                 
-                echo json_encode(['error' => 'success', 'msg' => '../Student/index.php']);
-
-            } else if($user_type == "expert") {
-
-                echo json_encode(['error' => 'success', 'msg' => '../Expert/index.php']);
+                    echo json_encode(['error' => 'success', 'msg' => '../Student/index.php']);
+    
+                } else if($user_type == "expert") {
+    
+                    echo json_encode(['error' => 'success', 'msg' => '../Expert/index.php']);
+                }
+                else if($user_type == "iptmanager"){
+    
+                    echo json_encode(['error' => 'success', 'msg' => '../Iptmanager/index.php']);
+                }
             }
-            else if($user_type == "iptmanager"){
-
-                echo json_encode(['error' => 'success', 'msg' => '../Iptmanager/index.php']);
+            else{
+                echo json_encode(['error' => 'error', 'msg' => 'Your Account is not approved yet. please try again later..']);
             }
+            
+            
         } else {
           echo json_encode(['error' => 'error', 'msg' => ''.$query_status.'']);
         }
