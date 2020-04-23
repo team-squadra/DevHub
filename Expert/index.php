@@ -163,11 +163,10 @@ if (!isset($_SESSION['user_type'])) {
                                                 <div class="desc">
                                                     <h1>Recruit! <br>New trainee</h1>
                                                     <h2>
-                                                        100% html5 bootstrap templates Made by 
-                                                        <a href="https://colorlib.com/" target="_blank">colorlib.com</a>
+                                                        Let's start to Recruit trainees for your job opptunity.
                                                     </h2>
                                                     <p>
-                                                        <a class="btn btn-primary btn-learn">Download CV <i class="icon-download4"></i></a>
+                                                        <a href="#" data-nav-section="about" class="btn btn-primary btn-learn">Explore</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -368,96 +367,118 @@ if (!isset($_SESSION['user_type'])) {
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Update Profile</h4>
-            </div>
-
+            </div>       
             <div class="modal-body">
-                <form>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                            <label for="name">User Name</label>
-                            <input type="text" class="form-control" placeholder="name" id="name">
+                <form action="Controllers/update_expert.php" method="post" enctype="multipart/form-data">
+                <?php 
+                    include 'Controllers/get_expert_details.php';
+
+                        foreach($responseData AS $response) {
+
+                        $name = $response['name'];
+                        $gender = $response['gender'];
+                        $phone_number = $response['phone_number'];
+                        $dob = $response['dob'];
+                        $description = $response['description'];
+                        $company = $response['company'];
+                        $profession = $response['profession'];
+                        $company_id = $response['company_id'];
+
+                        if($description == ""){
+                            echo'No description to show';
+                        }
+                        else{
+                            echo'
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label for="name">User Name</label>
+                                    <input type="text" class="form-control" value= '.$name.' id="name" name="name">
+                                    </div>
+                                </div>
+                                <!--  col-md-6   -->
+        
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="gender">Gender</label>
+                                        <input type="text" class="form-control" value='.$gender.' id="gender" name="gender">
+                                    </div>
+                                </div>
+                                <!--  col-md-6   -->
                             </div>
-                        </div>
-                        <!--  col-md-6   -->
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="gender">Gender</label>
-                                <input type="text" class="form-control" placeholder="(male/female)" id="gender">
+        
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label for="phone_number">Phone number</label>
+                                    <input type="text" class="form-control" value='.$phone_number.' id="phone_number" name="phone_number">
+                                    </div>
+        
+        
+                                </div>
+                                <!--  col-md-6   -->
+        
+                                <div class="col-md-6">
+        
+                                    <div class="form-group">
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="tel" class="form-control" value='.$dob.'  id="dob" name="dob">
+                                    </div>
+                                </div>
+                            <!--  col-md-6   -->
                             </div>
-                        </div>
-                        <!--  col-md-6   -->
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                            <label for="phone_number">Phone number</label>
-                            <input type="text" class="form-control" placeholder="Phone number" id="phone_number">
+                            <!--  row   -->
+                            <div class="row">
+                                <div class="col-md-6">
+        
+                                    <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <input type="text" class="form-control" value='.$description.' id="description" name="description">
+                                    </div>
+                                </div>
+                                <!--  col-md-6   -->
+        
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label for="company">Company name</label>
+                                    <input type="text" class="form-control" value='.$company.' id="company" name="company">
+                                    </div>
+        
+                                </div>
+                                <!--  col-md-6   -->
                             </div>
-
-
-                        </div>
-                        <!--  col-md-6   -->
-
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                            <label for="dob">Date of Birth</label>
-                            <input type="tel" class="form-control" id="dob" placeholder="dob">
+                            <div class="row">
+                                <div class="col-md-6">
+        
+                                    <div class="form-group">
+                                    <label for="profession">Profession</label>
+                                    <input type="text" class="form-control" value='.$profession.' id="profession" name="profession">
+                                    </div>
+                                </div>
+                                <!--  col-md-6   -->
+        
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label for="company_id">Company id</label>
+                                    <input type="text" class="form-control" value='.$company_id.' id="company_id" name="company_id">
+                                    </div>
+        
+                                </div>
+                                <!--  col-md-6   -->
                             </div>
-                        </div>
-                    <!--  col-md-6   -->
-                    </div>
-                    <!--  row   -->
-                    <div class="row">
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                            <label for="description">Description</label>
-                            <input type="text" class="form-control" id="description" placeholder="description">
-                            </div>
-                        </div>
-                        <!--  col-md-6   -->
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                            <label for="company">Company name</label>
-                            <input type="text" class="form-control" id="company" placeholder="company">
-                            </div>
-
-                        </div>
-                        <!--  col-md-6   -->
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                            <label for="profession">Profession</label>
-                            <input type="text" class="form-control" id="profession" placeholder="profession">
-                            </div>
-                        </div>
-                        <!--  col-md-6   -->
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                            <label for="company_id">Company id</label>
-                            <input type="text" class="form-control" id="company_id" placeholder="company_id">
-                            </div>
-
-                        </div>
-                        <!--  col-md-6   -->
-                    </div>
+                            ';
+                        }
+                    }
+                ?>                 
+                    
                     <p>Custom file:</p>
                     <div class="custom-file mb-3">
-                        <input type="file" class="custom-file-input" id="customFile" name="filename">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
+                        <input type="file" class="custom-file-input" id="imagefile" name="imagefile">
+                        <label class="custom-file-label" for="imagefile">Choose file</label>
                     </div>
 
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="upload">Submit</button>
                     </div>
                 </form>
             </div>
