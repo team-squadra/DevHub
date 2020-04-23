@@ -969,7 +969,7 @@ foreach ($responseData as $response) {
                             <div class="col-md-7">
                                 <div class="row">
                                     <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-                                        <form action="" method="post">
+                                    <form action="Controller/php/php_updateProfile.php" method="POST" enctype="multipart/form-data">
                                             <div class="row">
                                                 <div class="col-md-5">
                                                     <table>
@@ -977,7 +977,7 @@ foreach ($responseData as $response) {
                                                             <td>
                                                                 <div class="prolbl">Php</div>
                                                             </td>
-                                                            <td><input type="number" name="php" min="0" max="100" class="inputval" value="<?php echo $student_php; ?>"></td>
+                                                            <td><input type="number" name="php" min="0" max="100" class="inputval" name="php" value="<?php echo $student_php; ?>"></td>
                                                             <td class="clrgood txtwht">%</td>
                                                         </tr>
                                                         <tr>
@@ -987,7 +987,7 @@ foreach ($responseData as $response) {
                                                             <td>
                                                                 <div class="prolbl">Css</div>
                                                             </td>
-                                                            <td><input type="number" name="css" min="0" max="100" class="inputval" value="<?php echo $student_css; ?>"></td>
+                                                            <td><input type="number" name="css" min="0" max="100" class="inputval" name="css" value="<?php echo $student_css; ?>"></td>
                                                             <td class="clrgood txtwht">%</td>
                                                         </tr>
                                                         <tr>
@@ -997,7 +997,7 @@ foreach ($responseData as $response) {
                                                             <td>
                                                                 <div class="prolbl">Javascript</div>
                                                             </td>
-                                                            <td><input type="number" name="javascript" min="0" max="100" class="inputval" value="<?php echo $student_javascript; ?>"></td>
+                                                            <td><input type="number" name="javascript" min="0" max="100" class="inputval" name="javascript" value="<?php echo $student_javascript; ?>"></td>
                                                             <td class="clrgood txtwht">%</td>
                                                         </tr>
                                                         <tr>
@@ -1007,7 +1007,7 @@ foreach ($responseData as $response) {
                                                             <td>
                                                                 <div class="prolbl">C#</div>
                                                             </td>
-                                                            <td><input type="number" name="c_sharp" min="0" max="100" class="inputval" value="<?php echo $student_c_sharp; ?>"></td>
+                                                            <td><input type="number" name="c_sharp" min="0" max="100" class="inputval" name="c_sharp" value="<?php echo $student_c_sharp; ?>"></td>
                                                             <td class="clrgood txtwht">%</td>
                                                         </tr>
                                                         <tr>
@@ -1017,7 +1017,7 @@ foreach ($responseData as $response) {
                                                             <td>
                                                                 <div class="prolbl">C++</div>
                                                             </td>
-                                                            <td><input type="number" name="c_2plus" min="0" max="100" class="inputval" value="<?php echo $student_c_2plus; ?>"></td>
+                                                            <td><input type="number" name="c_2plus" min="0" max="100" class="inputval" name="c_2plus" value="<?php echo $student_c_2plus; ?>"></td>
                                                             <td class="clrgood txtwht">%</td>
                                                         </tr>
                                                     </table>
@@ -1028,7 +1028,7 @@ foreach ($responseData as $response) {
                                                             <td>
                                                                 <div class="prolbl">Java</div>
                                                             </td>
-                                                            <td><input type="number" name="java" min="0" max="100" class="inputval" value="<?php echo $student_java; ?>"></td>
+                                                            <td><input type="number" name="java" min="0" max="100" class="inputval" name="java" value="<?php echo $student_java; ?>"></td>
                                                             <td class="clrgood txtwht">%</td>
                                                         </tr>
                                                         <tr>
@@ -1038,7 +1038,7 @@ foreach ($responseData as $response) {
                                                             <td>
                                                                 <div class="prolbl">Node Js</div>
                                                             </td>
-                                                            <td><input type="number" name="node_js" min="0" max="100" class="inputval" value="<?php echo $student_node_js; ?>"></td>
+                                                            <td><input type="number" name="node_js" min="0" max="100" class="inputval" name="node_js" value="<?php echo $student_node_js; ?>"></td>
                                                             <td class="clrgood txtwht">%</td>
                                                         </tr>
                                                         <tr>
@@ -1048,7 +1048,7 @@ foreach ($responseData as $response) {
                                                             <td>
                                                                 <div class="prolbl">React Js</div>
                                                             </td>
-                                                            <td><input type="number" name="react_js" min="0" max="100" class="inputval" value="<?php echo $student_react_js; ?>"></td>
+                                                            <td><input type="number" name="react_js" min="0" max="100" class="inputval" name="react_js" value="<?php echo $student_react_js; ?>"></td>
                                                             <td class="clrgood txtwht">%</td>
                                                         </tr>
                                                         <tr>
@@ -1058,7 +1058,7 @@ foreach ($responseData as $response) {
                                                             <td>
                                                                 <div class="prolbl">Python</div>
                                                             </td>
-                                                            <td><input type="number" name="python" min="0" max="100" class="inputval" value="<?php echo $student_python; ?>"></td>
+                                                            <td><input type="number" name="python" min="0" max="100" class="inputval" name="python" value="<?php echo $student_python; ?>"></td>
                                                             <td class="clrgood txtwht">%</td>
                                                         </tr>
                                                         <tr>
@@ -1068,7 +1068,7 @@ foreach ($responseData as $response) {
                                                             <td>
                                                                 <div class="prolbl">Ruby</div>
                                                             </td>
-                                                            <td><input type="number" name="ruby" min="0" max="100" class="inputval" value="<?php echo $student_ruby; ?>"></td>
+                                                            <td><input type="number" name="ruby" min="0" max="100" class="inputval" name="ruby" value="<?php echo $student_ruby; ?>"></td>
                                                             <td class="clrgood txtwht">%</td>
                                                         </tr>
                                                     </table>
@@ -1100,6 +1100,18 @@ foreach ($responseData as $response) {
                                                         <input type="number" name="intelliJ_idea" id="id_intelliJ_idea" value="<?php echo $student_intelliJ_idea; ?>">
                                                         <input type="number" name="code_blocks" id="id_code_blocks" value="<?php echo $student_code_blocks; ?>">
                                                         <input type="number" name="rubymine"  id="id_rubymine" value="<?php echo $student_rubymine; ?>">
+                                                    </div>
+                                                    <div>
+                                                    <input type="text" name="description" value="<?php echo $student_description; ?>">
+                                                    <input type="text" name="address" value="<?php echo $student_address; ?>">
+                                                    <input type="text" name="phone_number" value="<?php echo $student_phone_number; ?>">
+                                                    <input type="text" name="dob" value="<?php echo $student_dob; ?>">
+                                                    <input type="text" name="gender" value="<?php echo $student_gender; ?>">
+                                                    <input type="text" name="cimage" value="<?php echo $student_profile_pic; ?>">
+                                                    <input type="text" name="git" value="<?php echo $student_git; ?>">
+                                                    <input type="text" name="linkedin" value="<?php echo $student_linkedin; ?>">
+                                                    <input type="text" name="stack_overflow" value="<?php echo $student_stack_overflow; ?>">
+                                                    <input type="file" name="nimage">
                                                     </div>
                                             </div>
                                             <div class="form-group">
