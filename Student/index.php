@@ -112,12 +112,10 @@ foreach ($responseData as $response) {
 <body>
     <div id="colorlib-page">
         <div class="container-wrap">
-            <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar"
-                aria-expanded="false" aria-controls="navbar"><i></i></a>
+            <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
             <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
                 <div class="text-center">
-                    <div class="author-img"
-                        style="background-image: url(data:image/png;base64,<?php echo $student_profile_pic; ?>);width:100px;height:100px;">
+                    <div class="author-img" style="background-image: url(data:image/png;base64,<?php echo $student_profile_pic; ?>);width:100px;height:100px;">
                     </div>
                     <h1 id="colorlib-logo">
                         <a href="index.php">
@@ -150,12 +148,10 @@ foreach ($responseData as $response) {
                     <p><small>&copy;
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;<script>
-                            document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i class="icon-heart"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </span> <span>Demo Images: <a href="https://unsplash.com/"
-                                    target="_blank">Unsplash.com</a></span></small></p>
+                            </span> <span>Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash.com</a></span></small></p>
                     <ul>
                         <li><a href="#"><i class="icon-facebook2"></i></a></li>
                         <li><a href="#"><i class="icon-twitter2"></i></a></li>
@@ -386,26 +382,20 @@ foreach ($responseData as $response) {
                                 <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
                                     <div class="col-md-12">
                                         <div class="about-desc">
-                                            <span class="heading-meta">About Me</span>
-                                            <h2 class="colorlib-heading animate-box">My Profile</h2>
+                                            <h2 class="colorlib-heading animate-box">About me</h2>
 
                                             <table>
                                                 <tr>
                                                     <td>
-                                                        <div class="profilecardimg"
-                                                            style="background-image: url(data:image/png;base64,<?php echo $student_profile_pic; ?>);width:100px;height:100px;">
+                                                        <div class="profilecardimg" style="background-image: url(data:image/png;base64,<?php echo $student_profile_pic; ?>);width:100px;height:100px;">
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <label
-                                                            class="prouname"><?php echo $_SESSION["user_name"] ?></label><br>
-                                                        <label class="proudetail"
-                                                            style="color: gray;"><?php echo $_SESSION["user_email"] ?></label><br>
-                                                        <button class="btn btn-primary btn-send-message"
-                                                            id="switch_div_btn" onclick="switch_div(1)"
-                                                            style="margin-bottom: 20px;">update
+                                                        <label class="prouname"><?php echo $_SESSION["user_name"] ?></label><br>
+                                                        <label class="proudetail" style="color: gray;"><?php echo $_SESSION["user_email"] ?></label><br>
+                                                        <button class="btn btn-primary btn-send-message" id="switch_div_btn" onclick="switch_div(1)" style="margin-bottom: 20px;">update
                                                             profile</button>
                                                     </td>
                                                 </tr>
@@ -413,34 +403,21 @@ foreach ($responseData as $response) {
                                             <div class="row dnone" id="pro_data_input">
                                                 <div class="col-md-7">
                                                     <div class="row">
-                                                        <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box"
-                                                            data-animate-effect="fadeInRight">
-                                                            <button class="btn btn-primary btn-send-message"
-                                                                onclick="switch_div(0)" style="margin-bottom: 10px;"><i
-                                                                    class="fas fa-times"></i></button>
-                                                            <form action="Controller/php/php_updateProfile.php"
-                                                                method="POST" enctype="multipart/form-data">
+                                                        <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
+                                                            <button class="btn btn-primary btn-send-message" onclick="switch_div(0)" style="margin-bottom: 10px;"><i class="fas fa-times"></i></button>
+                                                            <form action="Controller/php/php_updateProfile.php" method="POST" enctype="multipart/form-data">
 
                                                                 <div class="form-group" title="About me">
-                                                                    <textarea id="message" cols="30" rows="7"
-                                                                        name="description" class="form-control"
-                                                                        placeholder="Message"><?php echo $student_description; ?></textarea>
+                                                                    <textarea id="message" cols="30" rows="7" name="description" class="form-control" placeholder="Message"><?php echo $student_description; ?></textarea>
                                                                 </div>
                                                                 <div class="form-group" title="Address">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Address" name="address"
-                                                                        value="<?php echo $student_address; ?>">
+                                                                    <input type="text" class="form-control" placeholder="Address" name="address" value="<?php echo $student_address; ?>">
                                                                 </div>
                                                                 <div class="form-group" title="Phone Number">
-                                                                    <input type="number" maxlength="10"
-                                                                        name="phone_number" class="form-control"
-                                                                        placeholder="Phone Number"
-                                                                        value="<?php echo $student_phone_number; ?>">
+                                                                    <input type="number" maxlength="10" name="phone_number" class="form-control" placeholder="Phone Number" value="<?php echo $student_phone_number; ?>">
                                                                 </div>
                                                                 <div class="form-group" title="Date of birth">
-                                                                    <input type="date" class="form-control" name="dob"
-                                                                        placeholder="D.O.B"
-                                                                        value="<?php echo $student_dob; ?>">
+                                                                    <input type="date" class="form-control" name="dob" placeholder="D.O.B" value="<?php echo $student_dob; ?>">
                                                                 </div>
                                                                 <div class="form-group" title="Gender">
                                                                     <select name="gender" class="form-control">
@@ -454,9 +431,7 @@ foreach ($responseData as $response) {
                                                                         <tr>
                                                                             <td><i class="fab fa-github proicon"></i>
                                                                             </td>
-                                                                            <td><input type="text" class="form-control"
-                                                                                    placeholder="git" name="git"
-                                                                                    value="<?php echo $student_git; ?>">
+                                                                            <td><input type="text" class="form-control" placeholder="git" name="git" value="<?php echo $student_git; ?>">
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -466,10 +441,7 @@ foreach ($responseData as $response) {
                                                                         <tr>
                                                                             <td><i class="fab fa-linkedin proicon"></i>
                                                                             </td>
-                                                                            <td><input type="text" class="form-control"
-                                                                                    placeholder="linkedin"
-                                                                                    name="linkedin"
-                                                                                    value="<?php echo $student_linkedin; ?>">
+                                                                            <td><input type="text" class="form-control" placeholder="linkedin" name="linkedin" value="<?php echo $student_linkedin; ?>">
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -477,30 +449,20 @@ foreach ($responseData as $response) {
                                                                 <div class="form-group">
                                                                     <table>
                                                                         <tr>
-                                                                            <td><i
-                                                                                    class="fab fa-stack-overflow proicon"></i>
+                                                                            <td><i class="fab fa-stack-overflow proicon"></i>
                                                                             </td>
-                                                                            <td><input type="text" class="form-control"
-                                                                                    placeholder="stack_overflow"
-                                                                                    name="stack_overflow"
-                                                                                    value="<?php echo $student_stack_overflow; ?>">
+                                                                            <td><input type="text" class="form-control" placeholder="stack_overflow" name="stack_overflow" value="<?php echo $student_stack_overflow; ?>">
                                                                             </td>
                                                                         </tr>
                                                                     </table>
                                                                 </div>
-                                                                <div class="form-group dnone"
-                                                                    title="Current profile pic">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Image" name="cimage"
-                                                                        value="<?php echo $student_profile_pic; ?>">
+                                                                <div class="form-group dnone" title="Current profile pic">
+                                                                    <input type="text" class="form-control" placeholder="Image" name="cimage" value="<?php echo $student_profile_pic; ?>">
                                                                 </div>
                                                                 <div class="form-group" title="new profile pic">
                                                                     <label class="custom-file-upload">
                                                                         <center>
-                                                                            <input name="nimage" id="nimage_id"
-                                                                                type="file" accept=".png, .jpg, .jpeg"
-                                                                                onchange="get_img_name()"
-                                                                                style="display: none;">
+                                                                            <input name="nimage" id="nimage_id" type="file" accept=".png, .jpg, .jpeg" onchange="get_img_name()" style="display: none;">
                                                                             <i class="fas fa-upload dnone"></i>
                                                                             <i id="img_input_val">Update Profile
                                                                                 Picture</i>
@@ -509,70 +471,30 @@ foreach ($responseData as $response) {
                                                                 </div>
 
                                                                 <div class="dnone">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_php; ?>" name="php">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_css; ?>" name="css">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_javascript; ?>"
-                                                                        name="javascript">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_c_sharp; ?>"
-                                                                        name="c_sharp">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_c_2plus; ?>"
-                                                                        name="c_2plus">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_java; ?>"
-                                                                        name="java">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_node_js; ?>"
-                                                                        name="node_js">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_react_js; ?>"
-                                                                        name="react_js">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_python; ?>"
-                                                                        name="python">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_ruby; ?>"
-                                                                        name="ruby">
+                                                                    <input type="number" value="<?php echo $student_php; ?>" name="php">
+                                                                    <input type="number" value="<?php echo $student_css; ?>" name="css">
+                                                                    <input type="number" value="<?php echo $student_javascript; ?>" name="javascript">
+                                                                    <input type="number" value="<?php echo $student_c_sharp; ?>" name="c_sharp">
+                                                                    <input type="number" value="<?php echo $student_c_2plus; ?>" name="c_2plus">
+                                                                    <input type="number" value="<?php echo $student_java; ?>" name="java">
+                                                                    <input type="number" value="<?php echo $student_node_js; ?>" name="node_js">
+                                                                    <input type="number" value="<?php echo $student_react_js; ?>" name="react_js">
+                                                                    <input type="number" value="<?php echo $student_python; ?>" name="python">
+                                                                    <input type="number" value="<?php echo $student_ruby; ?>" name="ruby">
 
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_visual_studio; ?>"
-                                                                        name="visual_studio">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_eclipse; ?>"
-                                                                        name="eclipse">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_netbeans; ?>"
-                                                                        name="netbeans">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_atom; ?>"
-                                                                        name="atom">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_vs_code; ?>"
-                                                                        name="vs_code">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_qt_creator; ?>"
-                                                                        name="qt_creator">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_pycharm; ?>"
-                                                                        name="pycharm">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_intelliJ_idea; ?>"
-                                                                        name="intelliJ_idea">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_code_blocks; ?>"
-                                                                        name="code_blocks">
-                                                                    <input type="number"
-                                                                        value="<?php echo $student_rubymine; ?>"
-                                                                        name="rubymine">
+                                                                    <input type="number" value="<?php echo $student_visual_studio; ?>" name="visual_studio">
+                                                                    <input type="number" value="<?php echo $student_eclipse; ?>" name="eclipse">
+                                                                    <input type="number" value="<?php echo $student_netbeans; ?>" name="netbeans">
+                                                                    <input type="number" value="<?php echo $student_atom; ?>" name="atom">
+                                                                    <input type="number" value="<?php echo $student_vs_code; ?>" name="vs_code">
+                                                                    <input type="number" value="<?php echo $student_qt_creator; ?>" name="qt_creator">
+                                                                    <input type="number" value="<?php echo $student_pycharm; ?>" name="pycharm">
+                                                                    <input type="number" value="<?php echo $student_intelliJ_idea; ?>" name="intelliJ_idea">
+                                                                    <input type="number" value="<?php echo $student_code_blocks; ?>" name="code_blocks">
+                                                                    <input type="number" value="<?php echo $student_rubymine; ?>" name="rubymine">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <input type="submit" name="updatepro"
-                                                                        class="btn btn-primary btn-send-message"
-                                                                        value="update profile">
+                                                                    <input type="submit" name="updatepro" class="btn btn-primary btn-send-message" value="update profile">
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -588,19 +510,13 @@ foreach ($responseData as $response) {
                                                 <p><?php echo $student_gender; ?></p>
                                                 <p>
                                                     <label style="font-size: 25px;">
-                                                        <a href="<?php echo $student_git; ?>"
-                                                            title="<?php echo $student_git; ?>" target="_blank"
-                                                            style="margin-right: 10px;">
+                                                        <a href="<?php echo $student_git; ?>" title="<?php echo $student_git; ?>" target="_blank" style="margin-right: 10px;">
                                                             <i class="fab fa-github"></i>
                                                         </a>
-                                                        <a href="<?php echo $student_linkedin; ?>"
-                                                            title="<?php echo $student_linkedin; ?>" target="_blank"
-                                                            style="margin-right: 10px;">
+                                                        <a href="<?php echo $student_linkedin; ?>" title="<?php echo $student_linkedin; ?>" target="_blank" style="margin-right: 10px;">
                                                             <i class="fab fa-linkedin"></i>
                                                         </a>
-                                                        <a href="<?php echo $student_stack_overflow; ?>"
-                                                            title="<?php echo $student_stack_overflow; ?>"
-                                                            target="_blank">
+                                                        <a href="<?php echo $student_stack_overflow; ?>" title="<?php echo $student_stack_overflow; ?>" target="_blank">
                                                             <i class="fab fa-stack-overflow"></i>
                                                         </a>
                                                     </label>
@@ -617,16 +533,16 @@ foreach ($responseData as $response) {
                 <section class="colorlib-skills" data-section="skills">
                     <div class="colorlib-narrow-content">
                         <div class="row">
-                            <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
-                                data-animate-effect="fadeInLeft">
-                                <span class="heading-meta">My Specialty</span>
+                            <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
                                 <h2 class="colorlib-heading animate-box">My Skills</h2>
+                                <button class="btn btn-primary btn-send-message" style="margin-bottom: 20px;" id="update_skills_btn" onclick="switch_skill_div(1)">update skills</button>       
                             </div>
                         </div>
-                        <div class="row">
+                        
+                        <div class="row" id="pro_skill_view" style="margin-top: 20px;">
 
                             <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-                                <p class="proudetail" style="color: gray;font-size:15px;">Languages</p>
+                                <span class="heading-meta">Languages</span>
                                 <hr>
                             </div>
 
@@ -980,9 +896,8 @@ foreach ($responseData as $response) {
                             //////////////////////////////////////////////////////
                             ?>
 
-                            <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft"
-                                style="margin-top: 50px;">
-                                <p class="proudetail" style="color: gray;font-size:15px;">IDEs</p>
+                            <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft" style="margin-top: 50px;">
+                                <span class="heading-meta">IDEs'</span>
                                 <hr>
                             </div>
 
@@ -990,52 +905,52 @@ foreach ($responseData as $response) {
                                 <?php
                                 $ide_count = 0;
                                 if ($student_visual_studio != 0) {
-                                    echo '<label class="prodetailtag clride">Visual studio</label>';
+                                    echo '<label class="prodetailtag clrstrong">Visual studio</label>';
                                     $ide_count++;
                                 }
 
                                 if ($student_eclipse != 0) {
-                                    echo '<label class="prodetailtag clride">Eclipse</label>';
+                                    echo '<label class="prodetailtag clrstrong">Eclipse</label>';
                                     $ide_count++;
                                 }
 
                                 if ($student_netbeans != 0) {
-                                    echo '<label class="prodetailtag clride">Netbeans</label>';
+                                    echo '<label class="prodetailtag clrstrong">Netbeans</label>';
                                     $ide_count++;
                                 }
 
                                 if ($student_atom != 0) {
-                                    echo '<label class="prodetailtag clride">Atom</label>';
+                                    echo '<label class="prodetailtag clrstrong">Atom</label>';
                                     $ide_count++;
                                 }
 
                                 if ($student_vs_code != 0) {
-                                    echo '<label class="prodetailtag clride">Vs code</label>';
+                                    echo '<label class="prodetailtag clrstrong">Vs code</label>';
                                     $ide_count++;
                                 }
 
                                 if ($student_qt_creator != 0) {
-                                    echo '<label class="prodetailtag clride">Qt creator</label>';
+                                    echo '<label class="prodetailtag clrstrong">Qt creator</label>';
                                     $ide_count++;
                                 }
 
                                 if ($student_pycharm != 0) {
-                                    echo '<label class="prodetailtag clride">Pycharm</label>';
+                                    echo '<label class="prodetailtag clrstrong">Pycharm</label>';
                                     $ide_count++;
                                 }
 
                                 if ($student_intelliJ_idea != 0) {
-                                    echo '<label class="prodetailtag clride">IntelliJ IDEA</label>';
+                                    echo '<label class="prodetailtag clrstrong">IntelliJ IDEA</label>';
                                     $ide_count++;
                                 }
 
                                 if ($student_code_blocks != 0) {
-                                    echo '<label class="prodetailtag clride">Code::Blocks</label>';
+                                    echo '<label class="prodetailtag clrstrong">Code::Blocks</label>';
                                     $ide_count++;
                                 }
 
                                 if ($student_rubymine != 0) {
-                                    echo '<label class="prodetailtag clride">RubyMine</label>';
+                                    echo '<label class="prodetailtag clrstrong">RubyMine</label>';
                                     $ide_count++;
                                 }
                                 if ($ide_count == 0) {
@@ -1046,22 +961,173 @@ foreach ($responseData as $response) {
 
 
                         </div>
+                        <div class="row dnone" id="pro_skill_input">
+                            <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+                                <button class="btn btn-primary btn-send-message" style="margin-bottom: 20px;" onclick="switch_skill_div(0)"><i class="fas fa-times"></i></button>        
+                            </div>
+                        
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
+                                        <form action="" method="post">
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <table>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="prolbl">Php</div>
+                                                            </td>
+                                                            <td><input type="number" name="php" min="0" max="100" class="inputval" value="<?php echo $student_php; ?>"></td>
+                                                            <td class="clrgood txtwht">%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3" style="padding: 10px;"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="prolbl">Css</div>
+                                                            </td>
+                                                            <td><input type="number" name="css" min="0" max="100" class="inputval" value="<?php echo $student_css; ?>"></td>
+                                                            <td class="clrgood txtwht">%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3" style="padding: 10px;"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="prolbl">Javascript</div>
+                                                            </td>
+                                                            <td><input type="number" name="javascript" min="0" max="100" class="inputval" value="<?php echo $student_javascript; ?>"></td>
+                                                            <td class="clrgood txtwht">%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3" style="padding: 10px;"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="prolbl">C#</div>
+                                                            </td>
+                                                            <td><input type="number" name="c_sharp" min="0" max="100" class="inputval" value="<?php echo $student_c_sharp; ?>"></td>
+                                                            <td class="clrgood txtwht">%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3" style="padding: 10px;"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="prolbl">C++</div>
+                                                            </td>
+                                                            <td><input type="number" name="c_2plus" min="0" max="100" class="inputval" value="<?php echo $student_c_2plus; ?>"></td>
+                                                            <td class="clrgood txtwht">%</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="col-md-7 col-md-push-1">
+                                                    <table>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="prolbl">Java</div>
+                                                            </td>
+                                                            <td><input type="number" name="java" min="0" max="100" class="inputval" value="<?php echo $student_java; ?>"></td>
+                                                            <td class="clrgood txtwht">%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3" style="padding: 10px;"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="prolbl">Node Js</div>
+                                                            </td>
+                                                            <td><input type="number" name="node_js" min="0" max="100" class="inputval" value="<?php echo $student_node_js; ?>"></td>
+                                                            <td class="clrgood txtwht">%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3" style="padding: 10px;"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="prolbl">React Js</div>
+                                                            </td>
+                                                            <td><input type="number" name="react_js" min="0" max="100" class="inputval" value="<?php echo $student_react_js; ?>"></td>
+                                                            <td class="clrgood txtwht">%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3" style="padding: 10px;"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="prolbl">Python</div>
+                                                            </td>
+                                                            <td><input type="number" name="python" min="0" max="100" class="inputval" value="<?php echo $student_python; ?>"></td>
+                                                            <td class="clrgood txtwht">%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3" style="padding: 10px;"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="prolbl">Ruby</div>
+                                                            </td>
+                                                            <td><input type="number" name="ruby" min="0" max="100" class="inputval" value="<?php echo $student_ruby; ?>"></td>
+                                                            <td class="clrgood txtwht">%</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                
+                                                    <div style="padding: 20px;">
+                                                    <label class="idelbl" onclick="change_idelbl(1)" id="lbl1">Visual Studio</label>
+                                                    <label class="idelbl" onclick="change_idelbl(2)" id="lbl2">Eclipse</label>
+                                                    <label class="idelbl" onclick="change_idelbl(3)" id="lbl3">Netbeans</label>
+                                                    <label class="idelbl" onclick="change_idelbl(4)" id="lbl4">Atom</label>
+                                                    <label class="idelbl" onclick="change_idelbl(5)" id="lbl5">Vs code</label>
+                                                    <label class="idelbl" onclick="change_idelbl(6)" id="lbl6">Qt Creator</label>
+                                                    <label class="idelbl" onclick="change_idelbl(7)" id="lbl7">Pycharm</label>
+                                                    <label class="idelbl" onclick="change_idelbl(8)" id="lbl8">IntelliJ Idea</label>
+                                                    <label class="idelbl" onclick="change_idelbl(9)" id="lbl9">code::blocks</label>
+                                                    <label class="idelbl" onclick="change_idelbl(10)"id="lbl10">RubyMine</label>
+                                                    </div>
+                                                    <div class="dnone">
+                                                        <input type="number" name="visual_studio" id="id_visual_studio" value="<?php echo $student_visual_studio; ?>">
+                                                        <input type="number" name="eclipse" id="id_eclipse" value="<?php echo $student_eclipse; ?>">
+                                                        <input type="number" name="netbeans" id="id_netbeans"value="<?php echo $student_netbeans; ?>">
+                                                        <input type="number" name="atom" id="id_atom" value="<?php echo $student_atom; ?>">
+                                                        <input type="number" name="vs_code" id="id_vs_code" value="<?php echo $student_vs_code; ?>">
+                                                        <input type="number" name="qt_creator"  id="id_qt_creator" value="<?php echo $student_qt_creator; ?>">
+                                                        <input type="number" name="pycharm"  id="id_pycharm"value="<?php echo $student_pycharm; ?>">
+                                                        <input type="number" name="intelliJ_idea" id="id_intelliJ_idea" value="<?php echo $student_intelliJ_idea; ?>">
+                                                        <input type="number" name="code_blocks" id="id_code_blocks" value="<?php echo $student_code_blocks; ?>">
+                                                        <input type="number" name="rubymine"  id="id_rubymine" value="<?php echo $student_rubymine; ?>">
+                                                    </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="submit" name="updatepro" class="btn btn-primary btn-send-message" value="update Skills">
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-md-push-1">
+
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 <section class="colorlib-contact" data-section="contact">
                     <div class="colorlib-narrow-content">
                         <div class="row">
-                            <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
-                                data-animate-effect="fadeInLeft">
+                            <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
                                 <span class="heading-meta">Get in Touch</span>
                                 <h2 class="colorlib-heading">Contact</h2>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-5">
-                                <div class="colorlib-feature colorlib-feature-sm animate-box"
-                                    data-animate-effect="fadeInLeft">
+                                <div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
                                     <div class="colorlib-icon">
                                         <i class="icon-globe-outline"></i>
                                     </div>
@@ -1070,8 +1136,7 @@ foreach ($responseData as $response) {
                                     </div>
                                 </div>
 
-                                <div class="colorlib-feature colorlib-feature-sm animate-box"
-                                    data-animate-effect="fadeInLeft">
+                                <div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
                                     <div class="colorlib-icon">
                                         <i class="icon-map"></i>
                                     </div>
@@ -1080,8 +1145,7 @@ foreach ($responseData as $response) {
                                     </div>
                                 </div>
 
-                                <div class="colorlib-feature colorlib-feature-sm animate-box"
-                                    data-animate-effect="fadeInLeft">
+                                <div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
                                     <div class="colorlib-icon">
                                         <i class="icon-phone"></i>
                                     </div>
@@ -1092,8 +1156,7 @@ foreach ($responseData as $response) {
                             </div>
                             <div class="col-md-7 col-md-push-1">
                                 <div class="row">
-                                    <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box"
-                                        data-animate-effect="fadeInRight">
+                                    <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
                                         <form action="">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Name">
@@ -1105,12 +1168,10 @@ foreach ($responseData as $response) {
                                                 <input type="text" class="form-control" placeholder="Subject">
                                             </div>
                                             <div class="form-group">
-                                                <textarea name="" id="message" cols="30" rows="7" class="form-control"
-                                                    placeholder="Message"></textarea>
+                                                <textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
                                             </div>
                                             <div class="form-group">
-                                                <input type="submit" class="btn btn-primary btn-send-message"
-                                                    value="Send Message">
+                                                <input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
                                             </div>
                                         </form>
                                     </div>
