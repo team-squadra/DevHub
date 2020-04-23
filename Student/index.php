@@ -1100,8 +1100,7 @@ foreach ($responseData as $response) {
                                                         <input type="number" name="intelliJ_idea" id="id_intelliJ_idea" value="<?php echo $student_intelliJ_idea; ?>">
                                                         <input type="number" name="code_blocks" id="id_code_blocks" value="<?php echo $student_code_blocks; ?>">
                                                         <input type="number" name="rubymine"  id="id_rubymine" value="<?php echo $student_rubymine; ?>">
-                                                    </div>
-                                                    <div>
+
                                                     <input type="text" name="description" value="<?php echo $student_description; ?>">
                                                     <input type="text" name="address" value="<?php echo $student_address; ?>">
                                                     <input type="text" name="phone_number" value="<?php echo $student_phone_number; ?>">
