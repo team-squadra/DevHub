@@ -109,7 +109,7 @@ if (isset($_POST['updatepro'])) {
             // Setup cURL
             $ch = curl_init('' . $clinklocal . 'students/updatestudent');
             curl_setopt_array($ch, array(
-                CURLOPT_POST => TRUE,
+                CURLOPT_CUSTOMREQUEST => "PUT",
                 CURLOPT_RETURNTRANSFER => TRUE,
                 CURLOPT_HTTPHEADER => array(
                     'Content-Type: application/json'

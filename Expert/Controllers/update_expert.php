@@ -52,7 +52,7 @@ if(isset($_POST['upload'])){
     // Setup cURL
     $ch = curl_init( ''.$clinklocal.'itexperts/updateitexperts');
     curl_setopt_array($ch, array(
-        CURLOPT_POST => TRUE,
+        CURLOPT_CUSTOMREQUEST => "PUT",
         CURLOPT_RETURNTRANSFER => TRUE,
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json'
