@@ -32,9 +32,6 @@ if(isset($_POST['upload'])){
     
     }
 
-
-    // Display the output 
-
     //The data to send to the API
     $postData = array(
         'email' => $email,
