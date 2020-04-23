@@ -1,4 +1,4 @@
-<a href="../../index.php"><h1>back</h1></a>
+
 <?php
 session_start();
 include '../../../Clink/connectorlink.php';
